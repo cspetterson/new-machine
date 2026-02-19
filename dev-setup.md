@@ -118,6 +118,24 @@ brew install libpq postgresql
 brew services start postgresql
 ```
 
+### AI
+
+**Claude**
+
+https://code.claude.com/docs/en/overview#homebrew
+
+```
+brew install --cask claude-code
+```
+
+**Copilot**
+
+https://docs.github.com/en/copilot/how-tos/copilot-cli/set-up-copilot-cli/install-copilot-cli`
+
+```
+brew install copilot-cli
+```
+
 ### Vim packages
 
 Nothing to do for VIM directly. Dotfiles take care of my usual set up
