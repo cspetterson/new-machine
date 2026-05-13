@@ -1,6 +1,6 @@
 # Development Setup
 
-* Check out my dotfiles: https://github.com/JalisoCSP/dotfiles
+* Check out my dotfiles: https://github.com/cspetterson/dotfiles
 
 ### Terminal
 
@@ -14,7 +14,7 @@ I'm currently using a 16" Macbook Pro
 From Github settings: https://github.com/settings/keys
 
 * Follow these steps from Github: https://docs.github.com/authentication/connecting-to-github-with-ssh
-* Add public key to authorized keys in dotfiles: https://github.com/JalisoCSP/dotfiles/blob/master/ssh/authorized_keys.pub
+* Add public key to authorized keys in dotfiles: https://github.com/cspetterson/dotfiles/blob/master/ssh/authorized_keys.pub
 
 ### Install Homebrew
 
@@ -26,12 +26,12 @@ Double check command at: https://brew.sh/
 
 ### Clone dotfiles
 
-Copy aliases, vim & tmux settings, etc
+Copy aliases, nvim & tmux settings, etc
 
 * Trying to use a git command will suggest installing developer tools, do this
 
 ```
-git clone https://github.com/JalisoCSP/dotfiles ~/.dotfiles
+git clone https://github.com/cspetterson/dotfiles ~/.dotfiles
 cd ~/.dotfiles
 rake install
 ```
@@ -136,42 +136,13 @@ https://docs.github.com/en/copilot/how-tos/copilot-cli/set-up-copilot-cli/instal
 brew install copilot-cli
 ```
 
-### Vim packages
+### Neovim
 
-Nothing to do for VIM directly. Dotfiles take care of my usual set up
-
-TODO: dotfiles have these packages already, but they don't "copy across" when cloning. Potentially because the bundles are themselves git repos, the files in the bundles aren’t added to the dotfiles git repo — hence why these folders have arrows on them in Github. For now, we're manually adding them with the following:
-
-**ack.vim:** https://github.com/mileszs/ack.vim
-
-```
-brew install ack
-git clone https://github.com/mileszs/ack.vim.git ~/.vim/bundle/ack.vim
-```
-
-**Silver Searcher:** https://github.com/ggreer/the_silver_searcher
-
-```
-brew install the_silver_searcher
-```
-
-**ctrlp.vim:** https://github.com/ctrlpvim/ctrlp.vim
-
-```
-mkdir -p ~/.vim/pack/plugins/start
-git clone --depth=1 https://github.com/ctrlpvim/ctrlp.vim.git ~/.vim/pack/plugins/start/ctrlp
-```
-
-**vim.rails:** https://github.com/tpope/vim-rails
-
-```
-git clone https://github.com/tpope/vim-rails.git ~/.vim/bundle/vim-rails
-vim -u NONE -c "helptags vim-rails/doc" -c q
-```
+Plugins are managed by [lazy.nvim](https://github.com/folke/lazy.nvim) and will auto-install on first launch. Config is included in dotfiles and symlinked to `~/.config/nvim` by `rake install`.
 
 **ripgrep:** https://github.com/BurntSushi/ripgrep
 
-For neovim live_grep (`,s` for me)
+Required for Telescope live grep (`,s`)
 
 ```
 brew install ripgrep
@@ -179,7 +150,7 @@ brew install ripgrep
 
 **Nerd Font**: (I use "Hack") https://github.com/ryanoasis/nerd-fonts#option-2-homebrew-fonts
 
-For a slightly different font. Standard font is SF Mono, so I'm changing it to Hack Mono, which is a bit tighter together, but gives us icons with neovim.
+For icons in Neovim. Standard font is SF Mono, switching to Hack Nerd Font.
 
 ```
 brew install font-hack-nerd-font
