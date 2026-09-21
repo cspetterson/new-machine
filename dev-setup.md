@@ -128,6 +128,8 @@ https://code.claude.com/docs/en/overview#homebrew
 brew install --cask claude-code
 ```
 
+Install Dropbox, wait for it to sync, then symlink the CLAUDE.md file: `ln -s ~/Dropbox/CLAUDE.md ~/.claude/CLAUDE.md`
+
 **Copilot**
 
 https://docs.github.com/en/copilot/how-tos/copilot-cli/set-up-copilot-cli/install-copilot-cli`
